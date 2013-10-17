@@ -28,7 +28,7 @@ describe User do
   end
 
   it "should have many subs" do
-    # should have_many(:subs)
-    FactoryGirl.create(:user).subs.first.should be_instance_of(Sub)
+    should have_many(:subs)
+    FactoryGirl.create(:user_with_subs).subs.first.should be_instance_of(Sub)
   end
 end
