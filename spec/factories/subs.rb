@@ -7,5 +7,12 @@ FactoryGirl.define do
     moderator do
       FactoryGirl.create(:user)
     end
+    factory :sub_with_links do
+      links do
+        (1..3).map do
+          FactoryGirl.create(:link)
+        end
+      end
+    end
   end
 end

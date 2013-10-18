@@ -1,0 +1,12 @@
+<h1><%=@link.title%></h1>
+
+<%=link_to @link.title, @link.url%><br>
+<%=@link.description%><br>
+
+<h2>Comments</h2>
+
+<%= render :partial => "comment",
+            :locals => {
+              :comment => nil,
+              :comments_by_parent_id => @link.comments_by_parent_id
+              }%>

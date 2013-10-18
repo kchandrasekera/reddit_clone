@@ -4,4 +4,6 @@ class Sub < ActiveRecord::Base
   validates :name, :moderator_id, :presence => true
 
   belongs_to :moderator, :class_name => "User"
+
+  has_many :links
 end

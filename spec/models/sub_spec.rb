@@ -15,4 +15,9 @@ describe Sub do
     should belong_to(:moderator)
     FactoryGirl.create(:sub).moderator.should be_instance_of(User)
   end
+
+  it "has many links" do
+    should have_many(:links)
+    FactoryGirl.create(:sub_with_links).links.first.should be_instance_of(Link)
+  end
 end

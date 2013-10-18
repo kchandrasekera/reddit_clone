@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   has_many :subs, :foreign_key => :moderator_id
 
+  has_many :links, foreign_key: :submitter_id
+
+  has_many :comments
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)
     unless @user.nil?

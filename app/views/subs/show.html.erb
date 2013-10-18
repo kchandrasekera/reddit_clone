@@ -1,13 +1,17 @@
 <h1><%= @sub.name %></h1>
 
-<form action="/links" method="post" accept-charset="utf-8">
+<form action="<%= sub_links_url(@sub) %>" method="post" accept-charset="utf-8">
   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
 
   <label for="link_title">Link Name</label>
-  <input type="text" name="link[title]" id="link_title">
+  <input type="text" name="link[title]" id="link_title"><br>
 
   <label for="link_url">URL</label>
-  <input type="text" name="link[url]" id="link_url">
+  <input type="text" name="link[url]" id="link_url"><br>
+
+  <label for="link_description">Description (optional)</label><br>
+  <textarea name="link[description]" id="link_description"></textarea><br>
+
 
   <p><input type="submit" value="Share!"></p>
 </form>

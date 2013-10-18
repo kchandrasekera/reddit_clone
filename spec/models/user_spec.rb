@@ -31,4 +31,9 @@ describe User do
     should have_many(:subs)
     FactoryGirl.create(:user_with_subs).subs.first.should be_instance_of(Sub)
   end
+
+  it "has many links" do
+    should have_many(:links)
+    FactoryGirl.create(:user_with_links).links.first.should be_instance_of(Link)
+  end
 end

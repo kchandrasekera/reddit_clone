@@ -1,0 +1,10 @@
+<% comments_by_parent_id[comment].each do |child| %>
+<div style="border:1px dotted black; padding:10px">
+  <%= child.body %><br>
+  <%= render :partial => "comment",
+              :locals => {
+                :comment => child.id,
+                :comments_by_parent_id => comments_by_parent_id
+                }%>
+</div>
+<% end %>

@@ -11,5 +11,12 @@ FactoryGirl.define do
         end
       end
     end
+    factory :user_with_links do
+      links do
+        (1..3).map do
+          FactoryGirl.create(:link)
+        end
+      end
+    end
   end
 end
